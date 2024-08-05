@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model.entidades;
-
+using forms_dentro_do_forms.DAO;
 
 namespace forms_dentro_do_forms.forms
 {
@@ -17,21 +17,24 @@ namespace forms_dentro_do_forms.forms
         internal static object showdialog;
 
         DataTable dados;
+        ProfessorDAO dao = new ProfessorDAO();
+
         int LinhaS;
         public FrmProfessor()
         {
             InitializeComponent();
             dados = new DataTable();
+
             foreach (var atributos in typeof(DisciplinasEntidade).GetProperties())
             {
                 dados.Columns.Add(atributos.Name);
             }
 
-            dados.Rows.Add(1, "Fernando", "Fernandin");
-            dados.Rows.Add(2, "Lucilene", "lucil");
-            dados.Rows.Add(3, "Rafael", "Rafa");
+            
 
+            
             gridProfessor.DataSource = dados;
+            dados = dao.ObterProfessores();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -42,7 +45,15 @@ namespace forms_dentro_do_forms.forms
             professor.Apelido = txtNickname.Text;
 
             dados.Rows.Add(professor.Linha());
+
+            ProfessorDAO dao = new ProfessorDAO();
+
+            dao.Inserir(professor);
+
+            gridProfessor.DataSource = dao.ObterProfessores();
+            
             LimparDados();
+
         }
 
 
