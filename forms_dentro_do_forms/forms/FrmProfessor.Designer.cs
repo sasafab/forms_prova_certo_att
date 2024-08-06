@@ -174,6 +174,7 @@ namespace forms_dentro_do_forms.forms
             this.Name = "FrmProfessor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmProfessor";
+            this.Load += new System.EventHandler(this.FrmProfessor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridProfessor)).EndInit();
             this.ResumeLayout(false);

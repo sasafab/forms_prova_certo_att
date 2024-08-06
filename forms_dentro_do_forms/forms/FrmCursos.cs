@@ -81,5 +81,10 @@ namespace forms_dentro_do_forms.forms
             editar.Cells[2].Value = txtTurno.Text;
             editar.Cells[3].Value = checkActive.Checked;
         }
+
+        private void FrmCursos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

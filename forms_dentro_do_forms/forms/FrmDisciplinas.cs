@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using forms_dentro_do_forms.DAO;
 using Model.entidades;
 
 namespace forms_dentro_do_forms.forms
@@ -41,7 +42,15 @@ namespace forms_dentro_do_forms.forms
             disciplina.Sigla = txtSigla.Text;
             disciplina.Ativo = checkActive.Checked;
 
+
             dados.Rows.Add(disciplina.Linha());
+
+            DAOdisciplinas dao = new DAOdisciplinas();
+
+            dao.Inserir(disciplina);
+
+            gridDisciplina.DataSource = dao.obterDisciplinas();
+
             LimparDados();
         }
         private void LimparDados()

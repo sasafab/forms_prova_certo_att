@@ -185,6 +185,7 @@ namespace forms_dentro_do_forms.forms
             this.Name = "FrmCursos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCursos";
+            this.Load += new System.EventHandler(this.FrmCursos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursosGrid)).EndInit();
             this.ResumeLayout(false);

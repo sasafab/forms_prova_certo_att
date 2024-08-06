@@ -88,5 +88,10 @@ namespace forms_dentro_do_forms.forms
             editar.Cells[1].Value = txtName.Text;
             editar.Cells[2].Value = txtNickname.Text;
         }
+
+        private void FrmProfessor_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
