@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using forms_dentro_do_forms.DAO;
 using Model.entidades;
 
 namespace forms_dentro_do_forms.forms
@@ -26,9 +27,9 @@ namespace forms_dentro_do_forms.forms
                 dados.Columns.Add(atributos.Name);
             }
 
-            dados.Rows.Add(1, "Desenvolvimento de Sistemas", "Integral", true);
-            dados.Rows.Add(2, "Itinerário Formativo", "Manhã", true);
-            dados.Rows.Add(3, "Administração", "Integral", true);
+           // dados.Rows.Add(1, "Desenvolvimento de Sistemas", "Integral", true);
+           // dados.Rows.Add(2, "Itinerário Formativo", "Manhã", true);
+           // dados.Rows.Add(3, "Administração", "Integral", true);
 
             cursosGrid.DataSource = dados;
         }
@@ -50,6 +51,13 @@ namespace forms_dentro_do_forms.forms
             cursos.Ativo = checkActive.Checked;
 
             dados.Rows.Add(cursos.Linha());
+
+            DAOcursos dao = new DAOcursos();
+
+            dao.Inserir(cursos);
+
+            cursosGrid.DataSource = dao.obterCursos();
+
             LimparDados();
         }
 

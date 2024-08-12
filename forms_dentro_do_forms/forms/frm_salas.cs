@@ -1,4 +1,5 @@
-﻿using Model.Entitidades;
+﻿using forms_dentro_do_forms.DAO;
+using Model.Entitidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,9 +25,9 @@ namespace forms_dentro_do_forms
                 dados.Columns.Add(atributos.Name);
             }
 
-            dados.Rows.Add(1, "sala 23", 18, 37, true, true);
-            dados.Rows.Add(2, "sala 25", 20, 35, false, false);
-            dados.Rows.Add(3, "sala 13", 0, 38, true, true);
+           // dados.Rows.Add(1, "sala 23", 18, 37, true, true);
+           // dados.Rows.Add(2, "sala 25", 20, 35, false, false);
+           // dados.Rows.Add(3, "sala 13", 0, 38, true, true);
 
             Grid_salas.DataSource = dados;
         }
@@ -44,6 +45,12 @@ namespace forms_dentro_do_forms
             sala.Disponivel = check_disp.Checked;
 
             dados.Rows.Add(sala.Linha());
+
+            DAOsalas dao = new DAOsalas();
+
+            dao.Inserir(sala);
+
+            Grid_salas.DataSource = dao.obterSalas();
             LimparDados();
         }
 
