@@ -23,12 +23,15 @@ namespace forms_dentro_do_forms.DAO
         public void Inserir(CursosEntidade cursos)
         {
             Conexao.Open();
-            string query = "Insert into Cursos (Nome, Turno) Values (@nome, @turno)";
+            string query = "Insert into Cursos (Nome, Turno, Ativo) Values (@nome, @turno, @ativo)";
             SqlCommand comando = new SqlCommand(query, Conexao);  //usa-se o @ para identificar que algo tem que ser trocado por um tipo de dados (no caso vai trocar a aparição, vai receber as variaveis) 
             SqlParameter parametro1 = new SqlParameter("@nome", cursos.Nome);
             SqlParameter parametro2 = new SqlParameter("@turno", cursos.Turno);
+            SqlParameter parametro3 = new SqlParameter("@ativo", cursos.Ativo);
+
             comando.Parameters.Add(parametro1); 
             comando.Parameters.Add(parametro2);
+            comando.Parameters.Add(parametro3);
             comando.ExecuteNonQuery(); 
             Conexao.Close();
         }
@@ -37,7 +40,7 @@ namespace forms_dentro_do_forms.DAO
         {
             DataTable dt = new DataTable();
             Conexao.Open();
-            string query = "SELECT Id, Nome, Turno from Cursos";
+            string query = "SELECT Id, Nome, Turno, Ativo from Cursos";
             SqlCommand comando = new SqlCommand(query, Conexao);
 
 
@@ -56,6 +59,7 @@ namespace forms_dentro_do_forms.DAO
                 {
                     CursosEntidade p = new CursosEntidade();
                     p.Id = Convert.ToInt32(Leitura[0]);
+                    p.Ativo = Convert.ToBoolean(Leitura[3]);
                     p.Nome = Leitura[1].ToString();
                     p.Turno = Leitura[2].ToString();
                     dt.Rows.Add(p.Linha());
