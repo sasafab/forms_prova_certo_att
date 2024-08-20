@@ -92,6 +92,12 @@
     <Compile Include="forms\frm_salas.Designer.cs">
       <DependentUpon>frm_salas.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\listbox\FrmCursoDisciplina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\listbox\FrmCursoDisciplina.Designer.cs">
+      <DependentUpon>FrmCursoDisciplina.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="forms\home.cs">
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frm_salas.resx">
       <DependentUpon>frm_salas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\listbox\FrmCursoDisciplina.resx">
+      <DependentUpon>FrmCursoDisciplina.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

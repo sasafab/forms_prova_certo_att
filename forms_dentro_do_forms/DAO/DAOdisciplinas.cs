@@ -74,5 +74,47 @@ namespace forms_dentro_do_forms.DAO
             return dt;
         }
 
+
+        public DataTable Pesquisar(string pesquisa)
+        {
+            DataTable dt = new DataTable();
+            Conexao.Open();
+            string query = "";
+            if (string.IsNullOrEmpty(pesquisa))
+            {
+                query = "SELECT Id, Nome, Sigla, Ativo from Disciplinas";
+            }
+            else
+            {
+                query = "SELECT Id, Nome, Sigla, Ativo from Disciplinas Where Nome like '%"+pesquisa+"'";
+            }
+            SqlCommand comando = new SqlCommand(query, Conexao);
+
+
+            SqlDataReader Leitura = comando.ExecuteReader();
+
+            foreach (var atributos in typeof(DisciplinasEntidade).GetProperties())
+            {
+                dt.Columns.Add(atributos.Name);
+            }
+
+
+
+            if (Leitura.HasRows)
+            {
+                while (Leitura.Read())
+                {
+                    DisciplinasEntidade p = new DisciplinasEntidade();
+                    p.Id = Convert.ToInt32(Leitura[0]);
+                    p.Nome = Leitura[1].ToString();
+                    p.Sigla = Leitura[2].ToString();
+                    p.Ativo = Convert.ToBoolean(Leitura[3]);
+                    dt.Rows.Add(p.Linha());
+                }
+            }
+            Conexao.Close();
+            return dt;
+        }
+
     }
 }

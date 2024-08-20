@@ -83,7 +83,7 @@ namespace forms_dentro_do_forms.DAO
             if (string.IsNullOrEmpty(pesquisa))
             {
                 query = "SELECT Id, Nome, NumeroComputadores, NumeroCadeiras, IsLab, Disponivel from Salas";
-            }
+            } 
             else
             {
                 query = "SELECT Id, Nome, NumeroComputadores, NumeroCadeiras, IsLab, Disponivel from Salas Where Nome like '%"+pesquisa+"%'";

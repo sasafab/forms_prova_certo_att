@@ -98,7 +98,7 @@ namespace forms_dentro_do_forms.forms
 
         private void pesquisar_TextChanged(object sender, EventArgs e)
         {
-            gridDisciplina.DataSource = dao.(txtpesquisar.Text);
+            gridDisciplina.DataSource = dao.Pesquisar(txtpesquisar.Text);
         }
 
 
