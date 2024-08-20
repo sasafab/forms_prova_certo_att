@@ -70,8 +70,9 @@ namespace forms_dentro_do_forms.DAO
                     dt.Rows.Add(p.Linha());
                 }
             }
-
+            Conexao.Close();
             return dt;
         }
+
     }
 }

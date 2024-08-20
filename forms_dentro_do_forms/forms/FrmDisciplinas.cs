@@ -16,7 +16,7 @@ namespace forms_dentro_do_forms.forms
     {
         DataTable dados;
         int LinhaS;
-
+        DAOdisciplinas dao = new DAOdisciplinas();
         public FrmDisciplinas()
         {
             InitializeComponent();
@@ -94,6 +94,11 @@ namespace forms_dentro_do_forms.forms
             txtSigla.Text = gridDisciplina.Rows[LinhaS].Cells[2].Value.ToString();
             numID.Value = Convert.ToInt32(gridDisciplina.Rows[LinhaS].Cells[0].Value);
             checkActive.Checked = Convert.ToBoolean(gridDisciplina.Rows[LinhaS].Cells[3].Value);
+        }
+
+        private void pesquisar_TextChanged(object sender, EventArgs e)
+        {
+            gridDisciplina.DataSource = dao.(txtpesquisar.Text);
         }
 
 

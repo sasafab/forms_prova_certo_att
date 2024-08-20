@@ -41,6 +41,8 @@ namespace forms_dentro_do_forms.forms
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
+            this.txtpesquisar = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridDisciplina)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numID)).BeginInit();
             this.SuspendLayout();
@@ -49,9 +51,9 @@ namespace forms_dentro_do_forms.forms
             // 
             this.gridDisciplina.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridDisciplina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridDisciplina.Location = new System.Drawing.Point(44, 99);
+            this.gridDisciplina.Location = new System.Drawing.Point(44, 171);
             this.gridDisciplina.Name = "gridDisciplina";
-            this.gridDisciplina.Size = new System.Drawing.Size(856, 325);
+            this.gridDisciplina.Size = new System.Drawing.Size(856, 295);
             this.gridDisciplina.TabIndex = 18;
             this.gridDisciplina.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDisciplina_CellClick);
             // 
@@ -164,11 +166,32 @@ namespace forms_dentro_do_forms.forms
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
+            // txtpesquisar
+            // 
+            this.txtpesquisar.Location = new System.Drawing.Point(44, 126);
+            this.txtpesquisar.Multiline = true;
+            this.txtpesquisar.Name = "txtpesquisar";
+            this.txtpesquisar.Size = new System.Drawing.Size(400, 29);
+            this.txtpesquisar.TabIndex = 23;
+            this.txtpesquisar.TextChanged += new System.EventHandler(this.pesquisar_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(40, 103);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 20);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Pesquisar";
+            // 
             // FrmDisciplinas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 450);
+            this.ClientSize = new System.Drawing.Size(950, 478);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtpesquisar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnClean);
@@ -207,5 +230,7 @@ namespace forms_dentro_do_forms.forms
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.TextBox txtpesquisar;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -16,6 +16,7 @@ namespace forms_dentro_do_forms
     {
         DataTable dados;
         int LinhaS;
+        DAOsalas dao = new DAOsalas();
         public frm_salas()
         {
             InitializeComponent();
@@ -102,6 +103,11 @@ namespace forms_dentro_do_forms
             check_islab.Checked = Convert.ToBoolean(Grid_salas.Rows[LinhaS].Cells[4].Value);
             check_disp.Checked = Convert.ToBoolean(Grid_salas.Rows[LinhaS].Cells[5].Value);
 
+        }
+
+        private void txtPesquisar_TextChanged(object sender, EventArgs e)
+        {
+            Grid_salas.DataSource = dao.Pesquisar(txtPesquisar.Text);
         }
     }
 }

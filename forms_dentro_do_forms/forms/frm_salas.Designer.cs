@@ -29,6 +29,7 @@ namespace forms_dentro_do_forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.n_pc = new System.Windows.Forms.NumericUpDown();
             this.n_cadeira = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,6 +45,9 @@ namespace forms_dentro_do_forms
             this.btn_Delet = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.num_ID = new System.Windows.Forms.NumericUpDown();
+            this.txtPesquisar = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.n_pc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_cadeira)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_salas)).BeginInit();
@@ -143,9 +147,9 @@ namespace forms_dentro_do_forms
             // 
             this.Grid_salas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Grid_salas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Grid_salas.Location = new System.Drawing.Point(40, 150);
+            this.Grid_salas.Location = new System.Drawing.Point(40, 202);
             this.Grid_salas.Name = "Grid_salas";
-            this.Grid_salas.Size = new System.Drawing.Size(859, 327);
+            this.Grid_salas.Size = new System.Drawing.Size(859, 275);
             this.Grid_salas.TabIndex = 13;
             this.Grid_salas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_salas_CellClick);
             // 
@@ -199,11 +203,37 @@ namespace forms_dentro_do_forms
             this.num_ID.Size = new System.Drawing.Size(47, 26);
             this.num_ID.TabIndex = 18;
             // 
+            // txtPesquisar
+            // 
+            this.txtPesquisar.Location = new System.Drawing.Point(38, 153);
+            this.txtPesquisar.Multiline = true;
+            this.txtPesquisar.Name = "txtPesquisar";
+            this.txtPesquisar.Size = new System.Drawing.Size(339, 28);
+            this.txtPesquisar.TabIndex = 19;
+            this.txtPesquisar.TextChanged += new System.EventHandler(this.txtPesquisar_TextChanged);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(36, 130);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(79, 20);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Pesquisar";
+            // 
             // frm_salas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(937, 504);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtPesquisar);
             this.Controls.Add(this.num_ID);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btn_Delet);
@@ -249,5 +279,8 @@ namespace forms_dentro_do_forms
         private System.Windows.Forms.Button btn_Delet;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.NumericUpDown num_ID;
+        private System.Windows.Forms.TextBox txtPesquisar;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Label label3;
     }
 }

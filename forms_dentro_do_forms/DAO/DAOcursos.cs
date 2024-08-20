@@ -65,7 +65,52 @@ namespace forms_dentro_do_forms.DAO
                     dt.Rows.Add(p.Linha());
                 }
             }
+            Conexao.Close();
+            return dt;
+        }
 
+
+        public DataTable Pesquisar(string pesquisa)
+        {
+            DataTable dt = new DataTable();
+            Conexao.Open();
+
+            string query = "";
+
+            if (string.IsNullOrEmpty(pesquisa))
+            {
+                query = "SELECT Id, Nome, Turno, Ativo from Cursos";
+            }
+            else
+            {
+                query = "SELECT Id, Nome, Turno, Ativo from Salas Where Nome like '%"+ pesquisa +"%'";
+            }
+
+            SqlCommand comando = new SqlCommand(query, Conexao);
+
+
+            SqlDataReader Leitura = comando.ExecuteReader();
+
+            foreach (var atributos in typeof(CursosEntidade).GetProperties())
+            {
+                dt.Columns.Add(atributos.Name);
+            }
+
+
+
+            if (Leitura.HasRows)
+            {
+                while (Leitura.Read())
+                {
+                    CursosEntidade p = new CursosEntidade();
+                    p.Id = Convert.ToInt32(Leitura[0]);
+                    p.Ativo = Convert.ToBoolean(Leitura[3]);
+                    p.Nome = Leitura[1].ToString();
+                    p.Turno = Leitura[2].ToString();
+                    dt.Rows.Add(p.Linha());
+                }
+            }
+            Conexao.Close();
             return dt;
         }
     }
