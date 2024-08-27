@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="entidades\cursoDisciplinaEntidade.cs" />
     <Compile Include="entidades\CursosEntidade.cs" />
     <Compile Include="entidades\DiaDaSemana.cs" />
     <Compile Include="entidades\DisciplinasEntidade.cs" />

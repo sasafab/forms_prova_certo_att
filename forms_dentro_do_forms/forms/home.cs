@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using forms_dentro_do_forms.forms.listbox;
 
 namespace forms_dentro_do_forms
 {
@@ -109,6 +110,12 @@ namespace forms_dentro_do_forms
         {
             FrmDiaSemana diaSemana = new FrmDiaSemana();
             diaSemana.ShowDialog();
+        }
+
+        private void cursoDisciplinaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCursoDisciplina cursodisc = new FrmCursoDisciplina();
+            cursodisc.ShowDialog();
         }
     }
 }

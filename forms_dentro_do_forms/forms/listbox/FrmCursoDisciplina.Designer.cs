@@ -98,6 +98,7 @@ namespace forms_dentro_do_forms.forms.listbox
             this.cbxCursos.Name = "cbxCursos";
             this.cbxCursos.Size = new System.Drawing.Size(128, 21);
             this.cbxCursos.TabIndex = 6;
+            this.cbxCursos.SelectedIndexChanged += new System.EventHandler(this.cbxCursos_SelectedIndexChanged);
             // 
             // FrmCursoDisciplina
             // 

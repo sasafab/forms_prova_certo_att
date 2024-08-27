@@ -22,6 +22,9 @@ namespace forms_dentro_do_forms.forms.listbox
             //lsDisciplinas.Items.AddRange(disciplinaDAO.Listbox());
         }
 
-        
+        private void cbxCursos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
