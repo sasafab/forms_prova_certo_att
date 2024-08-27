@@ -16,6 +16,7 @@ namespace forms_dentro_do_forms.forms
     {
         DataTable dados;
         int LinhaS;
+        DAOcursos dao = new DAOcursos();
         public FrmCursos()
         {
             InitializeComponent();
@@ -93,6 +94,11 @@ namespace forms_dentro_do_forms.forms
         private void FrmCursos_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            cursosGrid.DataSource = dao.Pesquisar(txtPesquisar.Text);
         }
     }
 }

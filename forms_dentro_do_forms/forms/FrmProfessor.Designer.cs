@@ -40,6 +40,8 @@ namespace forms_dentro_do_forms.forms
             this.btnDel = new System.Windows.Forms.Button();
             this.btnDelAll = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtPesquisar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.txtNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridProfessor)).BeginInit();
             this.SuspendLayout();
@@ -74,7 +76,7 @@ namespace forms_dentro_do_forms.forms
             // txtNickname
             // 
             this.txtNickname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNickname.Location = new System.Drawing.Point(342, 51);
+            this.txtNickname.Location = new System.Drawing.Point(342, 47);
             this.txtNickname.Multiline = true;
             this.txtNickname.Name = "txtNickname";
             this.txtNickname.Size = new System.Drawing.Size(151, 29);
@@ -94,7 +96,7 @@ namespace forms_dentro_do_forms.forms
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(339, 26);
+            this.label3.Location = new System.Drawing.Point(339, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 20);
             this.label3.TabIndex = 5;
@@ -115,7 +117,7 @@ namespace forms_dentro_do_forms.forms
             // 
             this.gridProfessor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridProfessor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridProfessor.Location = new System.Drawing.Point(37, 137);
+            this.gridProfessor.Location = new System.Drawing.Point(37, 148);
             this.gridProfessor.Name = "gridProfessor";
             this.gridProfessor.Size = new System.Drawing.Size(845, 287);
             this.gridProfessor.TabIndex = 7;
@@ -154,11 +156,33 @@ namespace forms_dentro_do_forms.forms
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(41, 87);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 20);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Pesquisar";
+            // 
+            // txtPesquisar
+            // 
+            this.txtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesquisar.Location = new System.Drawing.Point(47, 109);
+            this.txtPesquisar.Multiline = true;
+            this.txtPesquisar.Name = "txtPesquisar";
+            this.txtPesquisar.Size = new System.Drawing.Size(337, 33);
+            this.txtPesquisar.TabIndex = 12;
+            this.txtPesquisar.TextChanged += new System.EventHandler(this.txtPesquisar_TextChanged);
+            // 
             // FrmProfessor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(923, 450);
+            this.Controls.Add(this.txtPesquisar);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnDelAll);
             this.Controls.Add(this.btnDel);
@@ -195,5 +219,7 @@ namespace forms_dentro_do_forms.forms
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnDelAll;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtPesquisar;
     }
 }

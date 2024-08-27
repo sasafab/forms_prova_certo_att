@@ -41,6 +41,8 @@ namespace forms_dentro_do_forms.forms
             this.btnDelet = new System.Windows.Forms.Button();
             this.btnClean = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.txtPesquisar = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursosGrid)).BeginInit();
             this.SuspendLayout();
@@ -125,9 +127,9 @@ namespace forms_dentro_do_forms.forms
             // 
             this.cursosGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.cursosGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cursosGrid.Location = new System.Drawing.Point(51, 113);
+            this.cursosGrid.Location = new System.Drawing.Point(29, 135);
             this.cursosGrid.Name = "cursosGrid";
-            this.cursosGrid.Size = new System.Drawing.Size(712, 325);
+            this.cursosGrid.Size = new System.Drawing.Size(734, 297);
             this.cursosGrid.TabIndex = 9;
             this.cursosGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cursosGrid_CellClick);
             // 
@@ -164,11 +166,32 @@ namespace forms_dentro_do_forms.forms
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
+            // txtPesquisar
+            // 
+            this.txtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesquisar.Location = new System.Drawing.Point(29, 103);
+            this.txtPesquisar.Name = "txtPesquisar";
+            this.txtPesquisar.Size = new System.Drawing.Size(381, 26);
+            this.txtPesquisar.TabIndex = 14;
+            this.txtPesquisar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(26, 81);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 20);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Pesquisar";
+            // 
             // FrmCursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtPesquisar);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnClean);
             this.Controls.Add(this.btnDelet);
@@ -207,5 +230,7 @@ namespace forms_dentro_do_forms.forms
         private System.Windows.Forms.Button btnDelet;
         private System.Windows.Forms.Button btnClean;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.TextBox txtPesquisar;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -88,8 +88,6 @@ namespace forms_dentro_do_forms.DAO
             }
 
             SqlCommand comando = new SqlCommand(query, Conexao);
-
-
             SqlDataReader Leitura = comando.ExecuteReader();
 
             foreach (var atributos in typeof(ProfessoresEntidade).GetProperties())

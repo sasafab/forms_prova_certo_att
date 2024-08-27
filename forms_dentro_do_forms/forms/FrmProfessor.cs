@@ -17,7 +17,7 @@ namespace forms_dentro_do_forms.forms
         internal static object showdialog;
 
         DataTable dados;
-        ProfessorDAO dao = new ProfessorDAO();
+        DAOsalas dao = new DAOsalas();
 
         int LinhaS;
         public FrmProfessor()
@@ -34,7 +34,7 @@ namespace forms_dentro_do_forms.forms
 
             
             gridProfessor.DataSource = dados;
-            dados = dao.ObterProfessores();
+            //dados = dao.ObterProfessores();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -92,6 +92,11 @@ namespace forms_dentro_do_forms.forms
         private void FrmProfessor_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtPesquisar_TextChanged(object sender, EventArgs e)
+        {
+            gridProfessor.DataSource = dao.Pesquisar(txtPesquisar.Text);
         }
     }
 }

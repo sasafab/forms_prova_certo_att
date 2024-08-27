@@ -19,7 +19,7 @@ namespace forms_dentro_do_forms.forms.listbox
         public FrmCursoDisciplina()
         {
             InitializeComponent();
-            lsDisciplinas.Items.AddRange(disciplinaDAO.Listbox());
+            //lsDisciplinas.Items.AddRange(disciplinaDAO.Listbox());
         }
 
         
