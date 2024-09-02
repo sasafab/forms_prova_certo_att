@@ -26,10 +26,11 @@ namespace forms_dentro_do_forms
                 dados.Columns.Add(atributos.Name);
             }
 
-           // dados.Rows.Add(1, "sala 23", 18, 37, true, true);
-           // dados.Rows.Add(2, "sala 25", 20, 35, false, false);
-           // dados.Rows.Add(3, "sala 13", 0, 38, true, true);
+            // dados.Rows.Add(1, "sala 23", 18, 37, true, true);
+            // dados.Rows.Add(2, "sala 25", 20, 35, false, false);
+            // dados.Rows.Add(3, "sala 13", 0, 38, true, true);
 
+            dados = dao.obterSalas();
             Grid_salas.DataSource = dados;
         }
 

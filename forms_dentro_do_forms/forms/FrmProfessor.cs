@@ -17,12 +17,13 @@ namespace forms_dentro_do_forms.forms
         internal static object showdialog;
 
         DataTable dados;
-        DAOsalas dao = new DAOsalas();
+        ProfessorDAO dao = new ProfessorDAO();
 
         int LinhaS;
         public FrmProfessor()
         {
             InitializeComponent();
+            dao.ObterProfessores();
             dados = new DataTable();
 
             foreach (var atributos in typeof(DisciplinasEntidade).GetProperties())
@@ -30,11 +31,11 @@ namespace forms_dentro_do_forms.forms
                 dados.Columns.Add(atributos.Name);
             }
 
-            
 
-            
+
+            dados = dao.ObterProfessores();
             gridProfessor.DataSource = dados;
-            //dados = dao.ObterProfessores();
+            
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -71,6 +72,7 @@ namespace forms_dentro_do_forms.forms
         private void btnDelAll_Click(object sender, EventArgs e)
         {
             gridProfessor.Rows.RemoveAt(LinhaS);
+
         }
 
         private void gridProfessor_CellClick(object sender, DataGridViewCellEventArgs e)

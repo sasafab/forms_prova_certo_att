@@ -26,10 +26,11 @@ namespace forms_dentro_do_forms.forms
                 dados.Columns.Add(atributos.Name);
             }
 
-           // dados.Rows.Add(1, "matemática", "mat", true);
-           // dados.Rows.Add(2, "portugues", "port", true);
+            // dados.Rows.Add(1, "matemática", "mat", true);
+            // dados.Rows.Add(2, "portugues", "port", true);
             //dados.Rows.Add(3, "geografia", "geo", true);
 
+            dados = dao.obterDisciplinas();
             gridDisciplina.DataSource = dados;
         }
 
@@ -98,7 +99,7 @@ namespace forms_dentro_do_forms.forms
 
         private void pesquisar_TextChanged(object sender, EventArgs e)
         {
-            gridDisciplina.DataSource = dao.Pesquisar(txtpesquisar.Text);
+            gridDisciplina.DataSource = dao.Pesquisar(txtPesquisar.Text);
         }
 
 

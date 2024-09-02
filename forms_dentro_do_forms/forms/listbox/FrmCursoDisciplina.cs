@@ -26,5 +26,25 @@ namespace forms_dentro_do_forms.forms.listbox
         {
 
         }
+
+        private void lsDisciplinas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmCursoDisciplina_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
