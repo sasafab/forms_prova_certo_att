@@ -43,6 +43,8 @@ namespace forms_dentro_do_forms.forms
             this.btnEdit = new System.Windows.Forms.Button();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtSigla = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursosGrid)).BeginInit();
             this.SuspendLayout();
@@ -105,7 +107,7 @@ namespace forms_dentro_do_forms.forms
             // 
             this.checkActive.AutoSize = true;
             this.checkActive.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkActive.Location = new System.Drawing.Point(347, 38);
+            this.checkActive.Location = new System.Drawing.Point(486, 37);
             this.checkActive.Name = "checkActive";
             this.checkActive.Size = new System.Drawing.Size(63, 24);
             this.checkActive.TabIndex = 7;
@@ -136,11 +138,11 @@ namespace forms_dentro_do_forms.forms
             // btnDelet
             // 
             this.btnDelet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelet.Location = new System.Drawing.Point(425, 17);
+            this.btnDelet.Location = new System.Drawing.Point(564, 68);
             this.btnDelet.Name = "btnDelet";
-            this.btnDelet.Size = new System.Drawing.Size(124, 45);
+            this.btnDelet.Size = new System.Drawing.Size(94, 25);
             this.btnDelet.TabIndex = 10;
-            this.btnDelet.Text = "EXCLUIR REGISTRO";
+            this.btnDelet.Text = "EXCLUIR";
             this.btnDelet.UseVisualStyleBackColor = true;
             this.btnDelet.Click += new System.EventHandler(this.btnDelet_Click);
             // 
@@ -185,11 +187,31 @@ namespace forms_dentro_do_forms.forms
             this.label4.TabIndex = 13;
             this.label4.Text = "Pesquisar";
             // 
+            // txtSigla
+            // 
+            this.txtSigla.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSigla.Location = new System.Drawing.Point(362, 37);
+            this.txtSigla.Name = "txtSigla";
+            this.txtSigla.Size = new System.Drawing.Size(100, 26);
+            this.txtSigla.TabIndex = 16;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(359, 15);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 20);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Sigla";
+            // 
             // FrmCursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtSigla);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtPesquisar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnEdit);
@@ -232,5 +254,7 @@ namespace forms_dentro_do_forms.forms
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.TextBox txtPesquisar;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtSigla;
+        private System.Windows.Forms.Label label5;
     }
 }

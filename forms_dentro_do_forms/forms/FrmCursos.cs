@@ -74,6 +74,7 @@ namespace forms_dentro_do_forms.forms
             LinhaS = e.RowIndex;
             txtName.Text = cursosGrid.Rows[LinhaS].Cells[1].Value.ToString();
             txtTurno.Text = cursosGrid.Rows[LinhaS].Cells[2].Value.ToString();
+            txtSigla.Text = cursosGrid.Rows[LinhaS].Cells[4].Value.ToString();
             numID.Value = Convert.ToInt32(cursosGrid.Rows[LinhaS].Cells[0].Value);
             checkActive.Checked = Convert.ToBoolean(cursosGrid.Rows[LinhaS].Cells[3].Value);
         }

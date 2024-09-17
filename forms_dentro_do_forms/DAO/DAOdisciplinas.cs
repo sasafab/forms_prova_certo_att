@@ -86,7 +86,7 @@ namespace forms_dentro_do_forms.DAO
             }
             else
             {
-                query = "SELECT Id, Nome, Sigla, Ativo from Disciplinas Where Nome like '%"+pesquisa+"'";
+                query = "SELECT Id, Nome, Sigla, Ativo from Disciplinas Where Nome like '%"+pesquisa+"%'";
             }
             SqlCommand comando = new SqlCommand(query, Conexao);
 

@@ -23,15 +23,17 @@ namespace forms_dentro_do_forms.DAO
         public void Inserir(CursosEntidade cursos)
         {
             Conexao.Open();
-            string query = "Insert into Cursos (Nome, Turno, Ativo) Values (@nome, @turno, @ativo)";
+            string query = "Insert into Cursos (Nome, Turno, Ativo, Sigla) Values (@nome, @turno, @ativo, @sigla)";
             SqlCommand comando = new SqlCommand(query, Conexao);  //usa-se o @ para identificar que algo tem que ser trocado por um tipo de dados (no caso vai trocar a aparição, vai receber as variaveis) 
             SqlParameter parametro1 = new SqlParameter("@nome", cursos.Nome);
             SqlParameter parametro2 = new SqlParameter("@turno", cursos.Turno);
             SqlParameter parametro3 = new SqlParameter("@ativo", cursos.Ativo);
+            SqlParameter parametro4 = new SqlParameter("@sigla", cursos.Sigla);
 
             comando.Parameters.Add(parametro1); 
             comando.Parameters.Add(parametro2);
             comando.Parameters.Add(parametro3);
+            comando.Parameters.Add(parametro4);
             comando.ExecuteNonQuery(); 
             Conexao.Close();
         }
@@ -64,7 +66,7 @@ namespace forms_dentro_do_forms.DAO
         {
             DataTable dt = new DataTable();
             Conexao.Open();
-            string query = "SELECT Id, Nome, Turno, Ativo from Cursos";
+            string query = "SELECT Id, Nome, Turno, Ativo, Sigla from Cursos";
             SqlCommand comando = new SqlCommand(query, Conexao);
 
 
@@ -83,9 +85,10 @@ namespace forms_dentro_do_forms.DAO
                 {
                     CursosEntidade p = new CursosEntidade();
                     p.Id = Convert.ToInt32(Leitura[0]);
-                    p.Ativo = Convert.ToBoolean(Leitura[3]);
                     p.Nome = Leitura[1].ToString();
                     p.Turno = Leitura[2].ToString();
+                    p.Ativo = Convert.ToBoolean(Leitura[3]);
+                    p.Sigla = Leitura[4].ToString();
                     dt.Rows.Add(p.Linha());
                 }
             }
@@ -103,11 +106,11 @@ namespace forms_dentro_do_forms.DAO
 
             if (string.IsNullOrEmpty(pesquisa))
             {
-                query = "SELECT Id, Nome, Turno, Ativo from Cursos";
+                query = "SELECT Id, Nome, Turno, Ativo, Sigla from Cursos";
             }
             else
             {
-                query = "SELECT Id, Nome, Turno, Ativo from Salas Where Nome like '%"+ pesquisa +"%'";
+                query = "SELECT Id, Nome, Turno, Ativo, Sigla from Salas Where Nome like '%"+ pesquisa +"%'";
             }
 
             SqlCommand comando = new SqlCommand(query, Conexao);
@@ -131,6 +134,7 @@ namespace forms_dentro_do_forms.DAO
                     p.Ativo = Convert.ToBoolean(Leitura[3]);
                     p.Nome = Leitura[1].ToString();
                     p.Turno = Leitura[2].ToString();
+                    p.Sigla = Leitura[4].ToString();
                     dt.Rows.Add(p.Linha());
                 }
             }
