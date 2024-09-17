@@ -32,12 +32,14 @@ namespace forms_dentro_do_forms.forms.listbox
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cbxCursos = new System.Windows.Forms.ComboBox();
+            this.gridCursoDisciplina = new System.Windows.Forms.DataGridView();
+            this.cbxPeriodo = new System.Windows.Forms.ComboBox();
             this.cbxDisciplina = new System.Windows.Forms.ComboBox();
             this.cbxCurso = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txtPesquisar = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCursoDisciplina)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -71,27 +73,27 @@ namespace forms_dentro_do_forms.forms.listbox
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // dataGridView1
+            // gridCursoDisciplina
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(35, 209);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(525, 216);
-            this.dataGridView1.TabIndex = 5;
+            this.gridCursoDisciplina.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridCursoDisciplina.Location = new System.Drawing.Point(35, 209);
+            this.gridCursoDisciplina.Name = "gridCursoDisciplina";
+            this.gridCursoDisciplina.Size = new System.Drawing.Size(525, 216);
+            this.gridCursoDisciplina.TabIndex = 5;
             // 
-            // cbxCursos
+            // cbxPeriodo
             // 
-            this.cbxCursos.FormattingEnabled = true;
-            this.cbxCursos.Items.AddRange(new object[] {
+            this.cbxPeriodo.FormattingEnabled = true;
+            this.cbxPeriodo.Items.AddRange(new object[] {
             "Manhã",
             "Tarde",
             "Integral",
             "Noite"});
-            this.cbxCursos.Location = new System.Drawing.Point(389, 55);
-            this.cbxCursos.Name = "cbxCursos";
-            this.cbxCursos.Size = new System.Drawing.Size(128, 21);
-            this.cbxCursos.TabIndex = 6;
-            this.cbxCursos.SelectedIndexChanged += new System.EventHandler(this.cbxCursos_SelectedIndexChanged);
+            this.cbxPeriodo.Location = new System.Drawing.Point(389, 55);
+            this.cbxPeriodo.Name = "cbxPeriodo";
+            this.cbxPeriodo.Size = new System.Drawing.Size(128, 21);
+            this.cbxPeriodo.TabIndex = 6;
+            this.cbxPeriodo.SelectedIndexChanged += new System.EventHandler(this.cbxCursos_SelectedIndexChanged);
             // 
             // cbxDisciplina
             // 
@@ -134,23 +136,44 @@ namespace forms_dentro_do_forms.forms.listbox
             this.label3.Text = "Cursos";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
+            // txtPesquisar
+            // 
+            this.txtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesquisar.Location = new System.Drawing.Point(40, 170);
+            this.txtPesquisar.Name = "txtPesquisar";
+            this.txtPesquisar.Size = new System.Drawing.Size(381, 26);
+            this.txtPesquisar.TabIndex = 16;
+            this.txtPesquisar.TextChanged += new System.EventHandler(this.txtPesquisar_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(37, 148);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 20);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Pesquisar";
+            // 
             // FrmCursoDisciplina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(583, 450);
+            this.Controls.Add(this.txtPesquisar);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.cbxCurso);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbxDisciplina);
-            this.Controls.Add(this.cbxCursos);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.cbxPeriodo);
+            this.Controls.Add(this.gridCursoDisciplina);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FrmCursoDisciplina";
             this.Text = "FrmCursoDisciplina";
             this.Load += new System.EventHandler(this.FrmCursoDisciplina_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCursoDisciplina)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,10 +184,12 @@ namespace forms_dentro_do_forms.forms.listbox
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox cbxCursos;
+        private System.Windows.Forms.DataGridView gridCursoDisciplina;
+        private System.Windows.Forms.ComboBox cbxPeriodo;
         private System.Windows.Forms.ComboBox cbxDisciplina;
         private System.Windows.Forms.ComboBox cbxCurso;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtPesquisar;
+        private System.Windows.Forms.Label label4;
     }
 }

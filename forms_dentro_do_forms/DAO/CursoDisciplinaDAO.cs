@@ -24,11 +24,11 @@ namespace forms_dentro_do_forms.DAO
         public void Inserir(cursoDisciplinaEntidade cursos)
         {
             Conexao.Open();
-            string query = "Insert into Cursos (CursoId, Periodo, DisciplinaId) Values (@CursoId, @DisciplinaId, @Periodo)";
+            string query = "Insert into Curso_Disciplina (Curso_Id, Disciplina_Id, Periodo ) Values (@CursoId, @DisciplinaId, @Periodo)";
             SqlCommand comando = new SqlCommand(query, Conexao);  //usa-se o @ para identificar que algo tem que ser trocado por um tipo de dados (no caso vai trocar a aparição, vai receber as variaveis) 
             SqlParameter parametro1 = new SqlParameter("@CursoId", cursos.CursoId);
-            SqlParameter parametro2 = new SqlParameter("@Periodo", cursos.Periodo);
-            SqlParameter parametro3 = new SqlParameter("@DisciplinaId", cursos.DisciplinaId);
+            SqlParameter parametro2 = new SqlParameter("@DisciplinaId", cursos.DisciplinaId);
+            SqlParameter parametro3 = new SqlParameter("@Periodo", cursos.Periodo);
             //SqlParameter parametro4 = new SqlParameter("@NomeCurso", cursos.NomeCurso);
             //SqlParameter parametro5 = new SqlParameter("@NomeDisciplina", cursos.NomeDisciplina);
 
@@ -40,32 +40,32 @@ namespace forms_dentro_do_forms.DAO
             Conexao.Close();
         }
 
-        /*public DataTable PreencherComboBox()
+
+        public DataTable ObterCursoDisciplina()
         {
             DataTable dt = new DataTable();
             Conexao.Open();
-            string query = "SELECT Id, Nome, Turno, Ativo from Cursos";
+            //string query = "SELECT c.Nome, d.Nome  FROM curso as c INNER JOIN disciplina as d in id.d = id.c  Order by c.Id desc";
+            string query = @"SELECT C.NOME, D.Nome, CD.Periodo  FROM Curso_Disciplina as CD
+                            INNER JOIN CURSOS as C ON C.Id = CD.Curso_id
+                            INNER JOIN DISCIPLINAS as D ON D.Id = CD.Disciplina_id
+                            Order by c.Id desc; ";
             SqlCommand comando = new SqlCommand(query, Conexao);
-
-
             SqlDataReader Leitura = comando.ExecuteReader();
 
-            foreach (var atributos in typeof(CursosEntidade).GetProperties())
-            {
-                dt.Columns.Add(atributos.Name);
-            }
-
+            dt.Columns.Add("Nome Curso");
+            dt.Columns.Add("Nome Disciplina");
+            dt.Columns.Add("Período");
 
 
             if (Leitura.HasRows)
             {
                 while (Leitura.Read())
                 {
-                    CursosEntidade p = new CursosEntidade();
-                    p.Id = Convert.ToInt32(Leitura[0]);
-                    p.Ativo = Convert.ToBoolean(Leitura[3]);
-                    p.Nome = Leitura[1].ToString();
-                    p.Turno = Leitura[2].ToString();
+                    cursoDisciplinaEntidade p = new cursoDisciplinaEntidade();
+                    p.NomeCurso = Leitura[0].ToString();
+                    p.NomeDisciplina = Leitura[1].ToString();
+                    p.Periodo = Leitura[2].ToString();
                     dt.Rows.Add(p.Linha());
                 }
             }
@@ -73,49 +73,48 @@ namespace forms_dentro_do_forms.DAO
             return dt;
         }
 
-
-        public DataTable Pesquisar(string pesquisa)
+        public DataTable PesquisarCursoDisciplina(string search) //problema
         {
-            DataTable dt = new DataTable();
+            DataTable retorno = new DataTable();
             Conexao.Open();
-
             string query = "";
-
-            if (string.IsNullOrEmpty(pesquisa))
+            if (string.IsNullOrEmpty(search))
             {
-                query = "SELECT Id, Nome, Turno, Ativo from Cursos";
+                query = @"SELECT C.NOME, D.Nome, CD.Periodo FROM Curso_Disciplina as CD
+                            INNER JOIN CURSOS as C ON C.Id = CD.Curso_id
+                            INNER JOIN DISCIPLINAS as D ON D.Id = CD.Disciplina_id
+                            ORDER BY C.NOME DESC";
             }
             else
             {
-                query = "SELECT Id, Nome, Turno, Ativo from Salas Where Nome like '%" + pesquisa + "%'";
+                query = @"SELECT C.NOME, D.Nome,  CD.Periodo FROM Curso_Disciplina as CD
+                            INNER JOIN CURSOS as C ON C.Id = CD.Curso_id
+                            INNER JOIN DISCIPLINAS as D ON D.Id = CD.Disciplina_id
+                            WHERE C.NOME LIKE '%" + search + "%' OR D.NOME LIKE '%" + search + "%' ORDER BY C.NOME DESC";
+
+                //query = "SELECT * FROM CURSO_DISCIPLINA WHERE C.NOME LIKE '%" + search + "%' OR D.NOME LIKE '%" + search + "%' ORDER BY ID DESC";
             }
+            SqlCommand Comando = new SqlCommand(query, Conexao);
 
-            SqlCommand comando = new SqlCommand(query, Conexao);
+            SqlDataReader Leitura = Comando.ExecuteReader();
 
+            retorno.Columns.Add("Nome Curso");
+            retorno.Columns.Add("Nome Disciplina");
+            retorno.Columns.Add("Período");
 
-            SqlDataReader Leitura = comando.ExecuteReader();
-
-            foreach (var atributos in typeof(CursosEntidade).GetProperties())
-            {
-                dt.Columns.Add(atributos.Name);
-            }
-
-
-
-            if (Leitura.HasRows)
+            if (Leitura.HasRows) //terminar aqui
             {
                 while (Leitura.Read())
                 {
-                    CursosEntidade p = new CursosEntidade();
-                    p.Id = Convert.ToInt32(Leitura[0]);
-                    p.Ativo = Convert.ToBoolean(Leitura[3]);
-                    p.Nome = Leitura[1].ToString();
-                    p.Turno = Leitura[2].ToString();
-                    dt.Rows.Add(p.Linha());
+                    cursoDisciplinaEntidade cd = new cursoDisciplinaEntidade();
+                    cd.NomeDisciplina = Leitura[0].ToString();
+                    cd.NomeCurso = Leitura[1].ToString();
+                    cd.Periodo = Leitura[2].ToString();
+                    retorno.Rows.Add(cd.Linha());
                 }
             }
             Conexao.Close();
-            return dt;
-        }*/
+            return retorno;
+        }
     }
 }

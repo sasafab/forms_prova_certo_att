@@ -15,6 +15,9 @@ namespace Model.entidades
         public string NomeDisciplina { get; set; }
         public string NomeCurso { get; set; }
 
-
+        public object[] Linha()
+        {
+            return new object[] { NomeDisciplina, NomeCurso , Periodo };
+        }
     }
 }
