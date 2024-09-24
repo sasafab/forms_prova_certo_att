@@ -42,7 +42,7 @@ namespace forms_dentro_do_forms.DAO
         {
             DataTable dataTable = new DataTable();
 
-            string query = "SELECT Id, Nome FROM Disciplinas";
+            string query = "SELECT Id, Nome FROM Cursos";
 
             using (SqlConnection connection = new SqlConnection(LinhaConexao))
             {
@@ -110,7 +110,7 @@ namespace forms_dentro_do_forms.DAO
             }
             else
             {
-                query = "SELECT Id, Nome, Turno, Ativo, Sigla from Salas Where Nome like '%"+ pesquisa +"%'";
+                query = "SELECT Id, Nome, Turno, Ativo, Sigla from Cursos Where Nome like '%"+ pesquisa +"%'";
             }
 
             SqlCommand comando = new SqlCommand(query, Conexao);

@@ -74,6 +74,31 @@ namespace forms_dentro_do_forms.DAO
             return dt;
         }
 
+        public DataTable PreencherComboBox()
+        {
+            DataTable dataTable = new DataTable();
+
+            string query = "SELECT Id, Nome FROM Disciplinas";
+
+            using (SqlConnection connection = new SqlConnection(LinhaConexao))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+
+                try
+                {
+                    // Preenche o DataTable com os dados da consulta
+                    adapter.Fill(dataTable);
+                }
+                catch (Exception ex)
+                {
+                    // Lida com erros, se necessário
+                    throw new Exception("Erro ao acessar os dados: " + ex.Message);
+                }
+            }
+
+            return dataTable;
+        }
+
 
         public DataTable Pesquisar(string pesquisa)
         {
@@ -115,31 +140,6 @@ namespace forms_dentro_do_forms.DAO
             Conexao.Close();
             return dt;
         }
-
-        public DataTable PreencherComboBox()
-        {
-            DataTable dataTable = new DataTable();
-
-            string query = "SELECT Id, Nome FROM Disciplinas";
-
-            using (SqlConnection connection = new SqlConnection(LinhaConexao))
-            {
-                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-
-                try
-                {
-                    // Preenche o DataTable com os dados da consulta
-                    adapter.Fill(dataTable);
-                }
-                catch (Exception ex)
-                {
-                    // Lida com erros, se necessário
-                    throw new Exception("Erro ao acessar os dados: " + ex.Message);
-                }
-            }
-
-            return dataTable;
-        }
-
+        
     }
 }

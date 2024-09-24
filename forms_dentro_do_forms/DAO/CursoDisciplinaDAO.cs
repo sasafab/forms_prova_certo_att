@@ -53,8 +53,8 @@ namespace forms_dentro_do_forms.DAO
             SqlCommand comando = new SqlCommand(query, Conexao);
             SqlDataReader Leitura = comando.ExecuteReader();
 
-            dt.Columns.Add("Nome Curso");
-            dt.Columns.Add("Nome Disciplina");
+            dt.Columns.Add("NomeCurso");
+            dt.Columns.Add("NomeDisciplina");
             dt.Columns.Add("Período");
 
 
