@@ -43,7 +43,7 @@ namespace forms_dentro_do_forms.DAO
         {
             DataTable dt = new DataTable();
             Conexao.Open();
-            string query = "SELECT Id, Nome, Apelido from Professores"; // originalmente tava select * from, mas ele mandou mudar
+            string query = "SELECT Id, Nome, Apelido from Professores Order by Id desc; "; // originalmente tava select * from, mas ele mandou mudar
             SqlCommand comando = new SqlCommand(query, Conexao);
            
 

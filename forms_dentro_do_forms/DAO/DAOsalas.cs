@@ -44,7 +44,7 @@ namespace forms_dentro_do_forms.DAO
         {
             DataTable dt = new DataTable();
             Conexao.Open();
-            string query = "SELECT Id, Nome, NumeroComputadores, NumeroCadeiras, IsLab, Disponivel from Salas";
+            string query = "SELECT Id, Nome, NumeroComputadores, NumeroCadeiras, IsLab, Disponivel from Salas Order by Id desc; ";
             SqlCommand comando = new SqlCommand(query, Conexao);
 
 

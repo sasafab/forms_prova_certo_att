@@ -40,6 +40,7 @@ namespace forms_dentro_do_forms.forms
         {
             txtName.Text = "";
             txtTurno.Text = "";
+            txtSigla.Text = "";
             numID.Value = 0;
             checkActive.Checked = false;
         }
@@ -51,6 +52,7 @@ namespace forms_dentro_do_forms.forms
             cursos.Nome = txtName.Text;
             cursos.Turno = txtTurno.Text;
             cursos.Ativo = checkActive.Checked;
+            cursos.Sigla = txtSigla.Text;
 
             dados.Rows.Add(cursos.Linha());
 
@@ -72,11 +74,12 @@ namespace forms_dentro_do_forms.forms
         private void cursosGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             LinhaS = e.RowIndex;
+            numID.Value = Convert.ToInt32(cursosGrid.Rows[LinhaS].Cells[0].Value);
             txtName.Text = cursosGrid.Rows[LinhaS].Cells[1].Value.ToString();
             txtTurno.Text = cursosGrid.Rows[LinhaS].Cells[2].Value.ToString();
-            txtSigla.Text = cursosGrid.Rows[LinhaS].Cells[4].Value.ToString();
-            numID.Value = Convert.ToInt32(cursosGrid.Rows[LinhaS].Cells[0].Value);
             checkActive.Checked = Convert.ToBoolean(cursosGrid.Rows[LinhaS].Cells[3].Value);
+            txtSigla.Text = cursosGrid.Rows[LinhaS].Cells[4].Value.ToString();
+
         }
 
         private void btnClean_Click(object sender, EventArgs e)

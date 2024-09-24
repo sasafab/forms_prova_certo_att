@@ -32,9 +32,9 @@ namespace forms_dentro_do_forms.forms.listbox
             cbxDisciplina.DisplayMember = "Nome";
             cbxDisciplina.ValueMember = "Id";
 
-            cbxPeriodo.DataSource = cursoDAO.PreencherComboBox();
-            cbxPeriodo.DisplayMember = "Nome";
-            cbxPeriodo.ValueMember = "Id";
+            cbxCurso.DataSource = cursoDAO.PreencherComboBox();
+            cbxCurso.DisplayMember = "Nome";
+            cbxCurso.ValueMember = "Id";
 
             AtualizarGrid(cdDAO.ObterCursoDisciplina());
         }
@@ -64,9 +64,10 @@ namespace forms_dentro_do_forms.forms.listbox
             CursoDisciplinaDAO cursoDisciplinaDao = new CursoDisciplinaDAO();
 
             cursoDisciplinaEntidade entidade = new cursoDisciplinaEntidade();
-            entidade.CursoId = Convert.ToInt32(cbxPeriodo.SelectedValue);
+            entidade.CursoId = Convert.ToInt32(cbxCurso.SelectedValue);
             entidade.DisciplinaId = Convert.ToInt32(cbxDisciplina.SelectedValue);
             entidade.Periodo = cbxPeriodo.SelectedItem.ToString();
+
 
             cursoDisciplinaDao.Inserir(entidade);
             AtualizarGrid(cdDAO.ObterCursoDisciplina());
