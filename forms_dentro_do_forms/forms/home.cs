@@ -117,5 +117,10 @@ namespace forms_dentro_do_forms
             FrmCursoDisciplina cursodisc = new FrmCursoDisciplina();
             cursodisc.ShowDialog();
         }
+
+        private void rEGISTROToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

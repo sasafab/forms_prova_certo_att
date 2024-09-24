@@ -38,10 +38,10 @@ namespace forms_dentro_do_forms
             this.horariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.diaDaSemanaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cursoDisciplinaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aRQUIVOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rELATORIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sAIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cursoDisciplinaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,6 +78,7 @@ namespace forms_dentro_do_forms
             this.rEGISTROToolStripMenuItem.Name = "rEGISTROToolStripMenuItem";
             this.rEGISTROToolStripMenuItem.Size = new System.Drawing.Size(80, 25);
             this.rEGISTROToolStripMenuItem.Text = "Registro";
+            this.rEGISTROToolStripMenuItem.Click += new System.EventHandler(this.rEGISTROToolStripMenuItem_Click);
             // 
             // salasToolStripMenuItem
             // 
@@ -121,6 +122,13 @@ namespace forms_dentro_do_forms
             this.diaDaSemanaToolStripMenuItem.Text = "Dia da semana";
             this.diaDaSemanaToolStripMenuItem.Click += new System.EventHandler(this.diaDaSemanaToolStripMenuItem_Click);
             // 
+            // cursoDisciplinaToolStripMenuItem
+            // 
+            this.cursoDisciplinaToolStripMenuItem.Name = "cursoDisciplinaToolStripMenuItem";
+            this.cursoDisciplinaToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.cursoDisciplinaToolStripMenuItem.Text = "Curso Disciplina";
+            this.cursoDisciplinaToolStripMenuItem.Click += new System.EventHandler(this.cursoDisciplinaToolStripMenuItem_Click);
+            // 
             // aRQUIVOToolStripMenuItem
             // 
             this.aRQUIVOToolStripMenuItem.Name = "aRQUIVOToolStripMenuItem";
@@ -138,13 +146,6 @@ namespace forms_dentro_do_forms
             this.sAIRToolStripMenuItem.Name = "sAIRToolStripMenuItem";
             this.sAIRToolStripMenuItem.Size = new System.Drawing.Size(49, 25);
             this.sAIRToolStripMenuItem.Text = "Sair";
-            // 
-            // cursoDisciplinaToolStripMenuItem
-            // 
-            this.cursoDisciplinaToolStripMenuItem.Name = "cursoDisciplinaToolStripMenuItem";
-            this.cursoDisciplinaToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
-            this.cursoDisciplinaToolStripMenuItem.Text = "Curso Disciplina";
-            this.cursoDisciplinaToolStripMenuItem.Click += new System.EventHandler(this.cursoDisciplinaToolStripMenuItem_Click);
             // 
             // salas
             // 

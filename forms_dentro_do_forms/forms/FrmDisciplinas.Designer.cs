@@ -56,6 +56,7 @@ namespace forms_dentro_do_forms.forms
             this.gridDisciplina.Size = new System.Drawing.Size(856, 295);
             this.gridDisciplina.TabIndex = 18;
             this.gridDisciplina.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDisciplina_CellClick);
+            this.gridDisciplina.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDisciplina_CellDoubleClick);
             // 
             // checkActive
             // 
