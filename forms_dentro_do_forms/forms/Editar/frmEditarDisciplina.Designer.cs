@@ -37,7 +37,7 @@ namespace forms_dentro_do_forms.forms.Editar
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(336, 450);
             this.Name = "frmEditarDisciplina";
-            this.Text = "frmEditarDisciplina";
+            this.Text = "+";
             this.ResumeLayout(false);
 
         }
