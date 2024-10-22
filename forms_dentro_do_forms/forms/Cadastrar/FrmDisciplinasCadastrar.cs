@@ -55,5 +55,18 @@ namespace forms_dentro_do_forms.forms.Cadastrar
             MessageBox.Show("Disciplina Cadastrada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
+
+        private void LimparDados()
+        {
+            txtNomeDisciplina.Text = "";
+            txtSigla.Text = "";
+            numId.Value = 0;
+            chkAtivo.Checked = false;
+        }
+
+        private void btnClean_Click(object sender, EventArgs e)
+        {
+            LimparDados();
+        }
     }
 }

@@ -37,7 +37,6 @@ namespace forms_dentro_do_forms.forms.Editar
             this.label4 = new System.Windows.Forms.Label();
             this.txtSiglaDisciplina = new System.Windows.Forms.TextBox();
             this.LabelCod = new System.Windows.Forms.Label();
-            this.Labelid = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtNomeDisciplina
@@ -121,22 +120,11 @@ namespace forms_dentro_do_forms.forms.Editar
             this.LabelCod.TabIndex = 0;
             this.LabelCod.Text = "Código";
             // 
-            // Labelid
-            // 
-            this.Labelid.AutoSize = true;
-            this.Labelid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Labelid.Location = new System.Drawing.Point(130, 26);
-            this.Labelid.Name = "Labelid";
-            this.Labelid.Size = new System.Drawing.Size(42, 20);
-            this.Labelid.TabIndex = 9;
-            this.Labelid.Text = "label";
-            // 
             // frmEditarDisciplina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(336, 450);
-            this.Controls.Add(this.Labelid);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtSiglaDisciplina);
             this.Controls.Add(this.label3);
@@ -162,6 +150,5 @@ namespace forms_dentro_do_forms.forms.Editar
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtSiglaDisciplina;
         private System.Windows.Forms.Label LabelCod;
-        private System.Windows.Forms.Label Labelid;
     }
 }

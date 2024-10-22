@@ -37,7 +37,7 @@ namespace forms_dentro_do_forms.forms.Editar
             {
                 while (Leitura.Read())
                 {
-                    Labelid.Text = Leitura[0].ToString();
+                    LabelCod.Text = Leitura[0].ToString();
                     txtNomeDisciplina.Text = Leitura[1].ToString();
                     txtSiglaDisciplina.Text = Leitura[2].ToString();
                     chkAtivo.Checked = Convert.ToBoolean(Leitura[3]);
@@ -64,7 +64,7 @@ namespace forms_dentro_do_forms.forms.Editar
             comando.Parameters.Add(new SqlParameter("@sigla", txtSiglaDisciplina.Text));
             comando.Parameters.Add(new SqlParameter("@nome", txtNomeDisciplina.Text));
             comando.Parameters.Add(new SqlParameter("@ativo", chkAtivo.Checked));
-            comando.Parameters.Add(new SqlParameter("@id", Labelid.Text));
+            comando.Parameters.Add(new SqlParameter("@id", LabelCod.Text));
 
             int resposta = comando.ExecuteNonQuery();
 
@@ -87,7 +87,7 @@ namespace forms_dentro_do_forms.forms.Editar
             Conexao.Open();
 
             SqlCommand comando = new SqlCommand(query, Conexao);
-            comando.Parameters.Add(new SqlParameter("@id", Labelid.Text));
+            comando.Parameters.Add(new SqlParameter("@id", LabelCod.Text));
             int resposta = comando.ExecuteNonQuery();
 
             if (resposta == 1)

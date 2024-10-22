@@ -57,17 +57,53 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\Cadastrar\FrmCursosCadastrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Cadastrar\FrmCursosCadastrar.Designer.cs">
+      <DependentUpon>FrmCursosCadastrar.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\Cadastrar\FrmDisciplinasCadastrar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\Cadastrar\FrmDisciplinasCadastrar.Designer.cs">
       <DependentUpon>FrmDisciplinasCadastrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\Cadastrar\FrmProfessoresCadastrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Cadastrar\FrmProfessoresCadastrar.Designer.cs">
+      <DependentUpon>FrmProfessoresCadastrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Cadastrar\FrmSalasCadastrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Cadastrar\FrmSalasCadastrar.Designer.cs">
+      <DependentUpon>FrmSalasCadastrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Editar\FrmEditarCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Editar\FrmEditarCursos.Designer.cs">
+      <DependentUpon>FrmEditarCursos.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\Editar\frmEditarDisciplina.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\Editar\frmEditarDisciplina.Designer.cs">
       <DependentUpon>frmEditarDisciplina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Editar\FrmEditarProfessores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Editar\FrmEditarProfessores.Designer.cs">
+      <DependentUpon>FrmEditarProfessores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Editar\FrmEditarSalas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Editar\FrmEditarSalas.Designer.cs">
+      <DependentUpon>FrmEditarSalas.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\FrmCursos.cs">
       <SubType>Form</SubType>
@@ -135,8 +171,14 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\Cadastrar\FrmCursosCadastrar.resx">
+      <DependentUpon>FrmCursosCadastrar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\Cadastrar\FrmDisciplinasCadastrar.resx">
       <DependentUpon>FrmDisciplinasCadastrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Editar\FrmEditarCursos.resx">
+      <DependentUpon>FrmEditarCursos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Editar\frmEditarDisciplina.resx">
       <DependentUpon>frmEditarDisciplina.cs</DependentUpon>

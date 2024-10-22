@@ -53,7 +53,7 @@ namespace forms_dentro_do_forms.forms
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(202, 33);
             this.btnSave.TabIndex = 19;
-            this.btnSave.Text = "Adicionar Disciplina";
+            this.btnSave.Text = "Cadastrar Disciplina";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
             // 
