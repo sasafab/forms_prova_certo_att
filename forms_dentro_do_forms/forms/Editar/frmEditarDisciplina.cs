@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace forms_dentro_do_forms.forms.Editar
 {
+    
     public partial class frmEditarDisciplina : Form
     {
 
@@ -36,9 +37,9 @@ namespace forms_dentro_do_forms.forms.Editar
             {
                 while (Leitura.Read())
                 {
-                    .Text = Leitura[0].ToString();
+                    Labelid.Text = Leitura[0].ToString();
                     txtNomeDisciplina.Text = Leitura[1].ToString();
-                    txtSigla.Text = Leitura[2].ToString();
+                    txtSiglaDisciplina.Text = Leitura[2].ToString();
                     chkAtivo.Checked = Convert.ToBoolean(Leitura[3]);
 
                 }
@@ -47,7 +48,11 @@ namespace forms_dentro_do_forms.forms.Editar
 
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
+        public frmEditarDisciplina()
+        {
+        }
+
+        private void btnSalvar_Click_1(object sender, EventArgs e)
         {
             string query = "update Disciplinas set Nome = @nome, Sigla = @sigla, Ativo = @ativo WHERE  Id = @id";
 
@@ -56,10 +61,10 @@ namespace forms_dentro_do_forms.forms.Editar
 
             SqlCommand comando = new SqlCommand(query, Conexao);
 
-            comando.Parameters.Add(new SqlParameter("@sigla", txtSigla.Text));
+            comando.Parameters.Add(new SqlParameter("@sigla", txtSiglaDisciplina.Text));
             comando.Parameters.Add(new SqlParameter("@nome", txtNomeDisciplina.Text));
             comando.Parameters.Add(new SqlParameter("@ativo", chkAtivo.Checked));
-            comando.Parameters.Add(new SqlParameter("@id", label_id.Text));
+            comando.Parameters.Add(new SqlParameter("@id", Labelid.Text));
 
             int resposta = comando.ExecuteNonQuery();
 
@@ -74,7 +79,7 @@ namespace forms_dentro_do_forms.forms.Editar
             }
         }
 
-        private void btnExcluir_Click(object sender, EventArgs e)
+        private void btnExcluir_Click_1(object sender, EventArgs e)
         {
             string query = "Delete from Disciplinas WHERE  Id = @id";
 
@@ -82,7 +87,7 @@ namespace forms_dentro_do_forms.forms.Editar
             Conexao.Open();
 
             SqlCommand comando = new SqlCommand(query, Conexao);
-            comando.Parameters.Add(new SqlParameter("@id", label_id.Text));
+            comando.Parameters.Add(new SqlParameter("@id", Labelid.Text));
             int resposta = comando.ExecuteNonQuery();
 
             if (resposta == 1)

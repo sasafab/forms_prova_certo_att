@@ -8,8 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using forms_dentro_do_forms.DAO;
+using forms_dentro_do_forms.forms.Cadastrar;
 using forms_dentro_do_forms.forms.Editar;
 using Model.entidades;
+
 
 namespace forms_dentro_do_forms.forms
 {
@@ -38,30 +40,14 @@ namespace forms_dentro_do_forms.forms
 
         private void btnSave_Click_1(object sender, EventArgs e)
         {
-            DisciplinasEntidade disciplina = new DisciplinasEntidade();
-            disciplina.Id = Convert.ToInt32(numID.Value);
-            disciplina.Nome = txtName.Text;
-            disciplina.Sigla = txtSigla.Text;
-            disciplina.Ativo = checkActive.Checked;
+            FrmDisciplinasCadastrar cadastrar = new FrmDisciplinasCadastrar();
 
+            // Inscreve-se no evento
+            cadastrar.FormClosed += Fechou_Cadastrar_FormClosed;
 
-            dados.Rows.Add(disciplina.Linha());
-
-            DAOdisciplinas dao = new DAOdisciplinas();
-
-            dao.Inserir(disciplina);
-
-            gridDisciplina.DataSource = dao.obterDisciplinas();
-
-            LimparDados();
+            cadastrar.ShowDialog(); // Abre o formulário como um diálogo modal
         }
-        private void LimparDados()
-        {
-            txtName.Text = "";
-            txtSigla.Text = "";
-            numID.Value = 0;
-            checkActive.Checked = false;
-        }
+       
 
 
         private void FrmDisciplinas_Load(object sender, EventArgs e)
@@ -81,24 +67,13 @@ namespace forms_dentro_do_forms.forms
 
         }
 
-        private void btnClean_Click(object sender, EventArgs e)
-        {
-            LimparDados();
-        }
-
+        
         private void btnDel_Click(object sender, EventArgs e)
         {
             gridDisciplina.Rows.RemoveAt(LinhaS);
         }
 
-        private void gridDisciplina_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            LinhaS = e.RowIndex;
-            txtName.Text = gridDisciplina.Rows[LinhaS].Cells[1].Value.ToString();
-            txtSigla.Text = gridDisciplina.Rows[LinhaS].Cells[2].Value.ToString();
-            numID.Value = Convert.ToInt32(gridDisciplina.Rows[LinhaS].Cells[0].Value);
-            checkActive.Checked = Convert.ToBoolean(gridDisciplina.Rows[LinhaS].Cells[3].Value);
-        }
+       
 
         private void pesquisar_TextChanged(object sender, EventArgs e)
         {
@@ -107,9 +82,30 @@ namespace forms_dentro_do_forms.forms
 
         private void gridDisciplina_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            frmEditarDisciplina disciplina = new frmEditarDisciplina();
-            disciplina.ShowDialog();
+            if (e.RowIndex >= 0)
+            {
+                int id = Convert.ToInt32(
+                    gridDisciplina.Rows[e.RowIndex].Cells[0].Value);
+
+
+                frmEditarDisciplina editar = new frmEditarDisciplina(id);
+
+                // Inscreve-se no evento
+                editar.FormClosed += Fechou_Editar_FormClosed;
+
+                editar.ShowDialog(); // Abre o formulário como um diálogo modal
+            }
         }
+
+        private void Fechou_Editar_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            gridDisciplina.DataSource = dao.obterDisciplinas();
+        }
+        private void Fechou_Cadastrar_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            gridDisciplina.DataSource = dao.obterDisciplinas();
+        }
+
 
 
         //private void btnDelAll_Click(object sender, EventArgs e)

@@ -57,6 +57,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\Cadastrar\FrmDisciplinasCadastrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Cadastrar\FrmDisciplinasCadastrar.Designer.cs">
+      <DependentUpon>FrmDisciplinasCadastrar.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\Editar\frmEditarDisciplina.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,12 @@
     <Compile Include="forms\FrmProfessor.Designer.cs">
       <DependentUpon>FrmProfessor.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\Usuario\FrmUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Usuario\FrmUser.Designer.cs">
+      <DependentUpon>FrmUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\frm_salas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +117,12 @@
     <Compile Include="forms\listbox\FrmCursoDisciplina.Designer.cs">
       <DependentUpon>FrmCursoDisciplina.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\Usuario\NovoUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Usuario\NovoUser.Designer.cs">
+      <DependentUpon>NovoUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="forms\home.cs">
@@ -116,6 +134,9 @@
     <Compile Include="teste.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Cadastrar\FrmDisciplinasCadastrar.resx">
+      <DependentUpon>FrmDisciplinasCadastrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Editar\frmEditarDisciplina.resx">
       <DependentUpon>frmEditarDisciplina.cs</DependentUpon>
@@ -135,11 +156,17 @@
     <EmbeddedResource Include="forms\FrmProfessor.resx">
       <DependentUpon>FrmProfessor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\Usuario\FrmUser.resx">
+      <DependentUpon>FrmUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\frm_salas.resx">
       <DependentUpon>frm_salas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\listbox\FrmCursoDisciplina.resx">
       <DependentUpon>FrmCursoDisciplina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Usuario\NovoUser.resx">
+      <DependentUpon>NovoUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

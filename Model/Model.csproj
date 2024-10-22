@@ -48,6 +48,7 @@
     <Compile Include="entidades\HorariosEntidade.cs" />
     <Compile Include="entidades\ProfessoresEntidade.cs" />
     <Compile Include="entidades\SalasEntidade.cs" />
+    <Compile Include="entidades\UserEntidade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
