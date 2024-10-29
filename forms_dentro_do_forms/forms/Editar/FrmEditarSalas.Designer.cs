@@ -32,7 +32,7 @@ namespace forms_dentro_do_forms.forms.Editar
             this.label3 = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.txtNomeDisciplina = new System.Windows.Forms.TextBox();
+            this.txtNomeSala = new System.Windows.Forms.TextBox();
             this.LabelCod = new System.Windows.Forms.Label();
             this.chkDisp = new System.Windows.Forms.CheckBox();
             this.numCadeiras = new System.Windows.Forms.NumericUpDown();
@@ -63,6 +63,7 @@ namespace forms_dentro_do_forms.forms.Editar
             this.btnExcluir.TabIndex = 13;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click_1);
             // 
             // btnSalvar
             // 
@@ -75,14 +76,14 @@ namespace forms_dentro_do_forms.forms.Editar
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // txtNomeDisciplina
+            // txtNomeSala
             // 
-            this.txtNomeDisciplina.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeDisciplina.Location = new System.Drawing.Point(30, 99);
-            this.txtNomeDisciplina.Multiline = true;
-            this.txtNomeDisciplina.Name = "txtNomeDisciplina";
-            this.txtNomeDisciplina.Size = new System.Drawing.Size(277, 31);
-            this.txtNomeDisciplina.TabIndex = 10;
+            this.txtNomeSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeSala.Location = new System.Drawing.Point(30, 99);
+            this.txtNomeSala.Multiline = true;
+            this.txtNomeSala.Name = "txtNomeSala";
+            this.txtNomeSala.Size = new System.Drawing.Size(277, 31);
+            this.txtNomeSala.TabIndex = 10;
             // 
             // LabelCod
             // 
@@ -166,9 +167,10 @@ namespace forms_dentro_do_forms.forms.Editar
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.txtNomeDisciplina);
+            this.Controls.Add(this.txtNomeSala);
             this.Controls.Add(this.LabelCod);
             this.Name = "FrmEditarSalas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEditarSalas";
             ((System.ComponentModel.ISupportInitialize)(this.numCadeiras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPC)).EndInit();
@@ -181,7 +183,7 @@ namespace forms_dentro_do_forms.forms.Editar
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.TextBox txtNomeDisciplina;
+        private System.Windows.Forms.TextBox txtNomeSala;
         private System.Windows.Forms.Label LabelCod;
         private System.Windows.Forms.CheckBox chkDisp;
         private System.Windows.Forms.NumericUpDown numCadeiras;

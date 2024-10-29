@@ -73,10 +73,7 @@ namespace forms_dentro_do_forms.forms
             cursosGrid.DataSource = dao.Pesquisar(txtPesquisar.Text);
         }
 
-        private void cursosGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+      
 
         private void cursosGrid_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {

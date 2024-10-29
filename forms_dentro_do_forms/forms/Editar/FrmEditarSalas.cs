@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using forms_dentro_do_forms.DAO;
 using Model.entidades;
 using System.Data.SqlClient;
+using forms_dentro_do_forms.forms.Editar;
 
 namespace forms_dentro_do_forms.forms.Editar
 {
@@ -21,8 +22,8 @@ namespace forms_dentro_do_forms.forms.Editar
         public FrmEditarSalas(int salaid)
         {
             InitializeComponent();
-            string query = "select Id, Nome, Sigla, Turno, Ativo " +
-                "from Cursos where Id = @id";
+            string query = "select Id, Nome, NumeroComputadores, NumeroCadeiras, IsLab, Disponivel " +
+                "from Salas where Id = @id";
 
             Conexao = new SqlConnection(LinhaConexao);
             Conexao.Open();
@@ -38,10 +39,11 @@ namespace forms_dentro_do_forms.forms.Editar
                 while (Leitura.Read())
                 {
                     LabelCod.Text = Leitura[0].ToString();
-                    txtNomeCursos.Text = Leitura[1].ToString();
-                    txtTurno.Text = Leitura[2].ToString();
-                    txtSiglaCurso.Text = Leitura[3].ToString();
-                    chkAtivo.Checked = Convert.ToBoolean(Leitura[4]);
+                    txtNomeSala.Text = Leitura[1].ToString();
+                    numPC.Text = Leitura[2].ToString();
+                    numCadeiras.Text = Leitura[3].ToString();
+                    chklab.Checked = Convert.ToBoolean(Leitura[4]);
+                    chkDisp.Checked = Convert.ToBoolean(Leitura[5]);
 
                 }
             }
@@ -52,24 +54,27 @@ namespace forms_dentro_do_forms.forms.Editar
 
         private void btnSalvar_Click_1(object sender, EventArgs e)
         {
-            string query = "update Cursos set Nome = @nome, Sigla = @sigla, Turno = @turno, Ativo = @ativo WHERE  Id = @id";
+            string query = "update Salas set Nome = @nome, NumeroComputadores = @numpc, NumeroCadeiras = @numcadeiras, IsLab = @islab, Disponivel = @disponivel WHERE  Id = @id";
 
             Conexao = new SqlConnection(LinhaConexao);
             Conexao.Open();
 
             SqlCommand comando = new SqlCommand(query, Conexao);
 
-            comando.Parameters.Add(new SqlParameter("@sigla", txtSiglaCurso.Text));
-            comando.Parameters.Add(new SqlParameter("@turno", txtTurno.Text));
-            comando.Parameters.Add(new SqlParameter("@nome", txtNomeCursos.Text));
-            comando.Parameters.Add(new SqlParameter("@ativo", chkAtivo.Checked));
-            comando.Parameters.Add(new SqlParameter("@id", LabelCod.Text));
+            comando.Parameters.Add(new SqlParameter("@disponivel", LabelCod.Text));
+
+            comando.Parameters.Add(new SqlParameter("@nome", txtNomeSala.Text));
+            comando.Parameters.Add(new SqlParameter("@numpc", numPC.Text));
+            comando.Parameters.Add(new SqlParameter("@numcadeiras", numCadeiras.Text));
+            comando.Parameters.Add(new SqlParameter("@islab", chklab.Checked));
+            comando.Parameters.Add(new SqlParameter("@disponivel", chkDisp.Checked));
+            
 
             int resposta = comando.ExecuteNonQuery();
 
             if (resposta == 1)
             {
-                MessageBox.Show("Disciplina Atualizada com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Sala Atualizada com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             else
@@ -82,24 +87,26 @@ namespace forms_dentro_do_forms.forms.Editar
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            string query = "update Cursos set Nome = @nome, Sigla = @sigla, Turno = @turno,  Ativo = @ativo WHERE  Id = @id";
+            string query = "update Salas set Nome = @nome, Sigla = @sigla, Turno = @turno,  Ativo = @ativo WHERE  Id = @id";
 
             Conexao = new SqlConnection(LinhaConexao);
             Conexao.Open();
 
             SqlCommand comando = new SqlCommand(query, Conexao);
 
-            comando.Parameters.Add(new SqlParameter("@sigla", txtSiglaCurso.Text));
-            comando.Parameters.Add(new SqlParameter("@turno", txtTurno.Text));
-            comando.Parameters.Add(new SqlParameter("@nome", txtNomeCursos.Text));
-            comando.Parameters.Add(new SqlParameter("@ativo", chkAtivo.Checked));
-            comando.Parameters.Add(new SqlParameter("@id", LabelCod.Text));
+            comando.Parameters.Add(new SqlParameter("@disponivel", LabelCod.Text));
+
+            comando.Parameters.Add(new SqlParameter("@nome", txtNomeSala.Text));
+            comando.Parameters.Add(new SqlParameter("@numpc", numPC.Text));
+            comando.Parameters.Add(new SqlParameter("@numcadeiras", numCadeiras.Text));
+            comando.Parameters.Add(new SqlParameter("@islab", chklab.Checked));
+            comando.Parameters.Add(new SqlParameter("@disponivel", chkDisp.Checked));
 
             int resposta = comando.ExecuteNonQuery();
 
             if (resposta == 1)
             {
-                MessageBox.Show("Curso Atualizado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Sala Atualizada com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             else
@@ -108,9 +115,10 @@ namespace forms_dentro_do_forms.forms.Editar
             }
         }
 
-        private void btnExcluir_Click(object sender, EventArgs e)
+      
+        private void btnExcluir_Click_1(object sender, EventArgs e)
         {
-            string query = "Delete from Cursos WHERE  Id = @id";
+            string query = "Delete from Salas WHERE  Id = @id";
 
             Conexao = new SqlConnection(LinhaConexao);
             Conexao.Open();
@@ -121,7 +129,7 @@ namespace forms_dentro_do_forms.forms.Editar
 
             if (resposta == 1)
             {
-                MessageBox.Show("Curso Excluído com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Sala Excluída com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             else

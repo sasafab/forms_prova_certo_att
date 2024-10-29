@@ -55,7 +55,6 @@ namespace forms_dentro_do_forms.forms
             this.cursosGrid.Name = "cursosGrid";
             this.cursosGrid.Size = new System.Drawing.Size(467, 297);
             this.cursosGrid.TabIndex = 9;
-            this.cursosGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cursosGrid_CellContentClick);
             this.cursosGrid.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cursosGrid_CellContentDoubleClick);
             // 
             // txtPesquisar

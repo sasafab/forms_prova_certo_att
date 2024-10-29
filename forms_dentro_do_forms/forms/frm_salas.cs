@@ -9,6 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using forms_dentro_do_forms.forms.Cadastrar;
+using forms_dentro_do_forms.forms.Editar;
+
 
 namespace forms_dentro_do_forms
 {
@@ -38,77 +41,45 @@ namespace forms_dentro_do_forms
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            SalasEntidade sala = new SalasEntidade();
-            sala.Id = Convert.ToInt32(num_ID.Text);
-            sala.Nome = txt_name.Text;
-            sala.NumeroCadeiras = Convert.ToInt32( n_cadeira.Value);
-            sala.NumeroComputadores = Convert.ToInt32(n_pc.Value);
-            sala.IsLab = check_islab.Checked;
-            sala.Disponivel = check_disp.Checked;
+            FrmSalasCadastrar cadastrar = new FrmSalasCadastrar();
 
-            dados.Rows.Add(sala.Linha());
+            // Inscreve-se no evento
+            cadastrar.FormClosed += Fechou_Cadastrar_FormClosed;
 
-            DAOsalas dao = new DAOsalas();
+            cadastrar.ShowDialog(); // Abre o formulário como um diálogo modal
+        }
 
-            dao.Inserir(sala);
-
+        private void Fechou_Editar_FormClosed(object sender, FormClosedEventArgs e)
+        {
             Grid_salas.DataSource = dao.obterSalas();
-            LimparDados();
         }
-
-        private void btnDel_Click(object sender, EventArgs e)
+        private void Fechou_Cadastrar_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //txt_name.Text = "";
-            //txt_id.Text = Convert.ToString(txt_id.Text);
-            //txt_id.Text = "";
-            //check_disp.Checked = false;           // pra "pegar" um valor eu nao preciso criar ele, basta chamar desse jeito ← ( ↑  a gente ta criando os valores e jogando eles em variaveis, pra pegar os campos do input)
-            //check_islab.Checked = false;
-            //n_cadeira.Value = 0;
-            //n_pc.Value = 0;
-            LimparDados();
-        }
-        private void LimparDados()
-        {
-            txt_name.Text = "";
-            num_ID.Value = 0;
-            check_islab.Checked = false;
-            n_cadeira.Value = 0;
-            n_pc.Value = 0;
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            DataGridViewRow editar = Grid_salas.Rows[LinhaS];
-            editar.Cells[0].Value = num_ID.Value;
-            editar.Cells[1].Value = txt_name.Text;
-            editar.Cells[2].Value = n_pc.Value;
-            editar.Cells[3].Value = n_cadeira.Value;
-            editar.Cells[4].Value = check_islab.Checked;
-            editar.Cells[5].Value = check_disp.Checked;
-            
-        }
-
-        private void btn_Delet_Click(object sender, EventArgs e)
-        {
-            Grid_salas.Rows.RemoveAt(LinhaS);
-
-        }
-
-        private void Grid_salas_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            LinhaS = e.RowIndex;
-            num_ID.Value = Convert.ToInt32(Grid_salas.Rows[LinhaS].Cells[0].Value);
-            txt_name.Text = Grid_salas.Rows[LinhaS].Cells[1].Value.ToString();
-            n_pc.Value = Convert.ToInt32(Grid_salas.Rows[LinhaS].Cells[2].Value);
-            n_cadeira.Value = Convert.ToInt32(Grid_salas.Rows[LinhaS].Cells[3].Value);
-            check_islab.Checked = Convert.ToBoolean(Grid_salas.Rows[LinhaS].Cells[4].Value);
-            check_disp.Checked = Convert.ToBoolean(Grid_salas.Rows[LinhaS].Cells[5].Value);
-
+            Grid_salas.DataSource = dao.obterSalas();
         }
 
         private void txtPesquisar_TextChanged(object sender, EventArgs e)
         {
             Grid_salas.DataSource = dao.Pesquisar(txtPesquisar.Text);
         }
+
+        private void Grid_salas_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                int id = Convert.ToInt32(
+                    Grid_salas.Rows[e.RowIndex].Cells[0].Value);
+
+
+                FrmEditarSalas editar = new FrmEditarSalas(id);
+
+                // Inscreve-se no evento
+                editar.FormClosed += Fechou_Editar_FormClosed;
+
+                editar.ShowDialog(); // Abre o formulário como um diálogo modal
+            }
+        }
+
+        
     }
 }

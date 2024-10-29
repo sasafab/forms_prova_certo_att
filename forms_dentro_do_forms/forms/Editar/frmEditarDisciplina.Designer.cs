@@ -135,6 +135,7 @@ namespace forms_dentro_do_forms.forms.Editar
             this.Controls.Add(this.txtNomeDisciplina);
             this.Controls.Add(this.LabelCod);
             this.Name = "frmEditarDisciplina";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "+";
             this.ResumeLayout(false);
             this.PerformLayout();

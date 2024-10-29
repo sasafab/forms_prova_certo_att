@@ -57,7 +57,7 @@ namespace forms_dentro_do_forms
             this.Grid_salas.Name = "Grid_salas";
             this.Grid_salas.Size = new System.Drawing.Size(455, 290);
             this.Grid_salas.TabIndex = 13;
-            this.Grid_salas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_salas_CellClick);
+            this.Grid_salas.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_salas_CellContentDoubleClick);
             // 
             // txtPesquisar
             // 

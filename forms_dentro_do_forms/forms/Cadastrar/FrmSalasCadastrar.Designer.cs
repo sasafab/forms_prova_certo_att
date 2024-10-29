@@ -179,6 +179,7 @@ namespace forms_dentro_do_forms.forms.Cadastrar
             this.Controls.Add(this.txtNomeSala);
             this.Controls.Add(this.btnSalvar);
             this.Name = "FrmSalasCadastrar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmSalasCadastrar";
             ((System.ComponentModel.ISupportInitialize)(this.numId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPC)).EndInit();
