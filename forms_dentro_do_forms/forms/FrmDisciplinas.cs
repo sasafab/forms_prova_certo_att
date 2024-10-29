@@ -55,24 +55,10 @@ namespace forms_dentro_do_forms.forms
 
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            //DataGridViewRow editar = gridDisciplina.Rows[LinhaS];
-            //editar.Cells[0].Value = numID.Value;
-            //editar.Cells[1].Value = txtName.Text;
-            //editar.Cells[2].Value = txtSigla.Text;
-            //editar.Cells[3].Value = checkActive.Checked;
-
-           
-
-        }
+       
 
         
-        private void btnDel_Click(object sender, EventArgs e)
-        {
-            gridDisciplina.Rows.RemoveAt(LinhaS);
-        }
-
+       
        
 
         private void pesquisar_TextChanged(object sender, EventArgs e)

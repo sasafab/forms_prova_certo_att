@@ -177,11 +177,23 @@
     <EmbeddedResource Include="forms\Cadastrar\FrmDisciplinasCadastrar.resx">
       <DependentUpon>FrmDisciplinasCadastrar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\Cadastrar\FrmProfessoresCadastrar.resx">
+      <DependentUpon>FrmProfessoresCadastrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Cadastrar\FrmSalasCadastrar.resx">
+      <DependentUpon>FrmSalasCadastrar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\Editar\FrmEditarCursos.resx">
       <DependentUpon>FrmEditarCursos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Editar\frmEditarDisciplina.resx">
       <DependentUpon>frmEditarDisciplina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Editar\FrmEditarProfessores.resx">
+      <DependentUpon>FrmEditarProfessores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Editar\FrmEditarSalas.resx">
+      <DependentUpon>FrmEditarSalas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\FrmCursos.resx">
       <DependentUpon>FrmCursos.cs</DependentUpon>

@@ -100,6 +100,11 @@ namespace forms_dentro_do_forms.forms.Editar
                 MessageBox.Show("Erro ao excluir", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void txtNomeDisciplina_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

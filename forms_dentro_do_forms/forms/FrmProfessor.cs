@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model.entidades;
 using forms_dentro_do_forms.DAO;
+using forms_dentro_do_forms.forms.Cadastrar;
+using forms_dentro_do_forms.forms.Editar;
 
 namespace forms_dentro_do_forms.forms
 {
@@ -26,7 +28,7 @@ namespace forms_dentro_do_forms.forms
             dao.ObterProfessores();
             dados = new DataTable();
 
-            foreach (var atributos in typeof(DisciplinasEntidade).GetProperties())
+            foreach (var atributos in typeof(ProfessoresEntidade).GetProperties())
             {
                 dados.Columns.Add(atributos.Name);
             }
@@ -40,65 +42,58 @@ namespace forms_dentro_do_forms.forms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            ProfessoresEntidade professor = new ProfessoresEntidade();
-            professor.Id = Convert.ToInt32(txtNum.Value);
-            professor.Nome = txtName.Text;
-            professor.Apelido = txtNickname.Text;
 
-            dados.Rows.Add(professor.Linha());
+            FrmProfessoresCadastrar cadastrar = new FrmProfessoresCadastrar();
 
-            ProfessorDAO dao = new ProfessorDAO();
+            // Inscreve-se no evento
+            cadastrar.FormClosed += Fechou_Cadastrar_FormClosed;
 
-            dao.Inserir(professor);
+            cadastrar.ShowDialog(); // Abre o formulário como um diálogo modal
 
+        }
+
+
+        
+       
+
+        private void pesquisar_TextChanged(object sender, EventArgs e)
+        {
+            gridProfessor.DataSource = dao.Pesquisar(txtPesquisar.Text);
+        }
+
+       
+
+        private void Fechou_Editar_FormClosed(object sender, FormClosedEventArgs e)
+        {
             gridProfessor.DataSource = dao.ObterProfessores();
-            
-            LimparDados();
-
         }
-
-
-        private void btnDel_Click(object sender, EventArgs e)
+        private void Fechou_Cadastrar_FormClosed(object sender, FormClosedEventArgs e)
         {
-            LimparDados();
-        }
-        private void LimparDados()
-        {
-            txtName.Text = "";
-            txtNickname.Text = "";
-            txtNum.Value = 0;
+            gridProfessor.DataSource = dao.ObterProfessores();
         }
 
-        private void btnDelAll_Click(object sender, EventArgs e)
-        {
-            gridProfessor.Rows.RemoveAt(LinhaS);
-
-        }
-
-        private void gridProfessor_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            LinhaS = e.RowIndex;
-            txtName.Text = gridProfessor.Rows[LinhaS].Cells[1].Value.ToString();
-            txtNickname.Text = gridProfessor.Rows[LinhaS].Cells[2].Value.ToString();
-            txtNum.Value = Convert.ToInt32(gridProfessor.Rows[LinhaS].Cells[0].Value);
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            DataGridViewRow editar = gridProfessor.Rows[LinhaS];
-            editar.Cells[0].Value = txtNum.Value;
-            editar.Cells[1].Value = txtName.Text;
-            editar.Cells[2].Value = txtNickname.Text;
-        }
-
-        private void FrmProfessor_Load(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void txtPesquisar_TextChanged(object sender, EventArgs e)
         {
             gridProfessor.DataSource = dao.Pesquisar(txtPesquisar.Text);
+        }
+
+        private void gridProfessor_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                int id = Convert.ToInt32(
+                    gridProfessor.Rows[e.RowIndex].Cells[0].Value);
+
+
+                FrmEditarProfessores editar = new FrmEditarProfessores(id);
+
+                // Inscreve-se no evento
+                editar.FormClosed += Fechou_Editar_FormClosed;
+
+                editar.ShowDialog(); // Abre o formulário como um diálogo modal
+            }
         }
     }
 }

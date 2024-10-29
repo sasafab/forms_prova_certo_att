@@ -157,6 +157,7 @@ namespace forms_dentro_do_forms.forms.Editar
             this.Controls.Add(this.txtNomeCursos);
             this.Controls.Add(this.LabelCod);
             this.Name = "FrmEditarCursos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEditarCursos";
             this.ResumeLayout(false);
             this.PerformLayout();

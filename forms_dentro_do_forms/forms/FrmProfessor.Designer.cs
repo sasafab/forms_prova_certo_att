@@ -55,7 +55,7 @@ namespace forms_dentro_do_forms.forms
             this.gridProfessor.Name = "gridProfessor";
             this.gridProfessor.Size = new System.Drawing.Size(477, 287);
             this.gridProfessor.TabIndex = 7;
-            this.gridProfessor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridProfessor_CellClick);
+            this.gridProfessor.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridProfessor_CellContentDoubleClick);
             // 
             // label4
             // 
@@ -90,7 +90,6 @@ namespace forms_dentro_do_forms.forms
             this.Name = "FrmProfessor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmProfessor";
-            this.Load += new System.EventHandler(this.FrmProfessor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridProfessor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

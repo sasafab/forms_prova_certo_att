@@ -47,6 +47,7 @@ namespace forms_dentro_do_forms.forms.Editar
             this.txtNomeDisciplina.Name = "txtNomeDisciplina";
             this.txtNomeDisciplina.Size = new System.Drawing.Size(277, 31);
             this.txtNomeDisciplina.TabIndex = 1;
+            this.txtNomeDisciplina.TextChanged += new System.EventHandler(this.txtNomeDisciplina_TextChanged);
             // 
             // chkAtivo
             // 

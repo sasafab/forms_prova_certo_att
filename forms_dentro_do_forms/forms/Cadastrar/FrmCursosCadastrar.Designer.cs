@@ -154,6 +154,7 @@ namespace forms_dentro_do_forms.forms.Cadastrar
             this.Controls.Add(this.txtNomeCurso);
             this.Controls.Add(this.btnSalvar);
             this.Name = "FrmCursosCadastrar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCursosCadastrar";
             ((System.ComponentModel.ISupportInitialize)(this.numId)).EndInit();
             this.ResumeLayout(false);
