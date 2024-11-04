@@ -42,6 +42,9 @@ namespace forms_dentro_do_forms
             this.aRQUIVOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rELATORIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sAIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarNovoUsuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.entrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +54,7 @@ namespace forms_dentro_do_forms
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.rEGISTROToolStripMenuItem,
+            this.loginToolStripMenuItem,
             this.aRQUIVOToolStripMenuItem,
             this.rELATORIOSToolStripMenuItem,
             this.sAIRToolStripMenuItem});
@@ -147,6 +151,30 @@ namespace forms_dentro_do_forms
             this.sAIRToolStripMenuItem.Size = new System.Drawing.Size(49, 25);
             this.sAIRToolStripMenuItem.Text = "Sair";
             // 
+            // loginToolStripMenuItem
+            // 
+            this.loginToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastrarNovoUsuárioToolStripMenuItem,
+            this.entrarToolStripMenuItem});
+            this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(61, 25);
+            this.loginToolStripMenuItem.Text = "Login";
+            this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
+            // 
+            // cadastrarNovoUsuárioToolStripMenuItem
+            // 
+            this.cadastrarNovoUsuárioToolStripMenuItem.Name = "cadastrarNovoUsuárioToolStripMenuItem";
+            this.cadastrarNovoUsuárioToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
+            this.cadastrarNovoUsuárioToolStripMenuItem.Text = "Cadastrar Novo Usuário";
+            this.cadastrarNovoUsuárioToolStripMenuItem.Click += new System.EventHandler(this.cadastrarNovoUsuárioToolStripMenuItem_Click);
+            // 
+            // entrarToolStripMenuItem
+            // 
+            this.entrarToolStripMenuItem.Name = "entrarToolStripMenuItem";
+            this.entrarToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
+            this.entrarToolStripMenuItem.Text = "Entrar";
+            this.entrarToolStripMenuItem.Click += new System.EventHandler(this.entrarToolStripMenuItem_Click);
+            // 
             // salas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,5 +210,8 @@ namespace forms_dentro_do_forms
         private System.Windows.Forms.ToolStripMenuItem cursosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem diaDaSemanaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cursoDisciplinaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastrarNovoUsuárioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem entrarToolStripMenuItem;
     }
 }
