@@ -39,6 +39,9 @@ namespace forms_dentro_do_forms
             this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.diaDaSemanaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cursoDisciplinaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarNovoUsuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.entrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aRQUIVOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rELATORIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sAIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,6 +54,7 @@ namespace forms_dentro_do_forms
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.rEGISTROToolStripMenuItem,
+            this.loginToolStripMenuItem,
             this.aRQUIVOToolStripMenuItem,
             this.rELATORIOSToolStripMenuItem,
             this.sAIRToolStripMenuItem});
@@ -129,6 +133,30 @@ namespace forms_dentro_do_forms
             this.cursoDisciplinaToolStripMenuItem.Text = "Curso Disciplina";
             this.cursoDisciplinaToolStripMenuItem.Click += new System.EventHandler(this.cursoDisciplinaToolStripMenuItem_Click);
             // 
+            // loginToolStripMenuItem
+            // 
+            this.loginToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastrarNovoUsuárioToolStripMenuItem,
+            this.entrarToolStripMenuItem});
+            this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(122, 25);
+            this.loginToolStripMenuItem.Text = "Administrador";
+            this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
+            // 
+            // cadastrarNovoUsuárioToolStripMenuItem
+            // 
+            this.cadastrarNovoUsuárioToolStripMenuItem.Name = "cadastrarNovoUsuárioToolStripMenuItem";
+            this.cadastrarNovoUsuárioToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
+            this.cadastrarNovoUsuárioToolStripMenuItem.Text = "Gerenciar Usuários";
+            this.cadastrarNovoUsuárioToolStripMenuItem.Click += new System.EventHandler(this.cadastrarNovoUsuárioToolStripMenuItem_Click);
+            // 
+            // entrarToolStripMenuItem
+            // 
+            this.entrarToolStripMenuItem.Name = "entrarToolStripMenuItem";
+            this.entrarToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
+            this.entrarToolStripMenuItem.Text = "Cadastrar Usuário";
+            this.entrarToolStripMenuItem.Click += new System.EventHandler(this.entrarToolStripMenuItem_Click);
+            // 
             // aRQUIVOToolStripMenuItem
             // 
             this.aRQUIVOToolStripMenuItem.Name = "aRQUIVOToolStripMenuItem";
@@ -182,5 +210,8 @@ namespace forms_dentro_do_forms
         private System.Windows.Forms.ToolStripMenuItem cursosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem diaDaSemanaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cursoDisciplinaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastrarNovoUsuárioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem entrarToolStripMenuItem;
     }
 }

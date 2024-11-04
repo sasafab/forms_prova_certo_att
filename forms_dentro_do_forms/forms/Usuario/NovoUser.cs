@@ -18,14 +18,16 @@ namespace forms_dentro_do_forms.forms.Usuario
             InitializeComponent();
         }
 
-        private void NovoUser_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            
+           
+                UserEntidade u = new UserEntidade();
+                u.Login = txtLogin.Text;
+                u.Senha = txtSenha.Text;
+                u.Ativo = CheckAtivo.Checked;
+                u.Inserir();
+                MessageBox.Show("Sucesso", "Cadastrado com sucesso");
+                Close();
             
         }
     }

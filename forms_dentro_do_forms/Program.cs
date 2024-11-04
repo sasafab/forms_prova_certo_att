@@ -1,4 +1,6 @@
-﻿using System;
+﻿using forms_dentro_do_forms.forms;
+using forms_dentro_do_forms.forms.Usuario;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +18,7 @@ namespace forms_dentro_do_forms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new salas()); 
+            Application.Run(new FrmLogar());  // na vdd é o home
         }
     }
 }

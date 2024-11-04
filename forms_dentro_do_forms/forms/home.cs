@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using forms_dentro_do_forms.forms.listbox;
+using forms_dentro_do_forms.forms.Usuario;
 
 namespace forms_dentro_do_forms
 {
@@ -121,6 +122,23 @@ namespace forms_dentro_do_forms
         private void rEGISTROToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cadastrarNovoUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmUser user = new FrmUser();
+            user.ShowDialog();
+        }
+
+        private void entrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NovoUser novo = new NovoUser();
+            novo.ShowDialog();
         }
     }
 }
