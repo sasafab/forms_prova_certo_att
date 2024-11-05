@@ -44,17 +44,7 @@ namespace forms_dentro_do_forms.forms
 
         private void dtgridUsuarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                int id = Convert.ToInt32(
-                    dtgridusuarios.Rows[e.RowIndex].Cells[0].Value);
 
-                FrmEditarUser editar = new FrmEditarUser(id);
-
-                // Inscreve-se no evento
-                editar.FormClosed += FecharForm;
-                editar.ShowDialog(); // Abre o formulário como um diálogo modal
-            }
         }
 
         private void dtgridusuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)

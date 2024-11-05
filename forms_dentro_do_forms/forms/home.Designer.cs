@@ -139,22 +139,22 @@ namespace forms_dentro_do_forms
             this.cadastrarNovoUsuárioToolStripMenuItem,
             this.entrarToolStripMenuItem});
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(122, 25);
-            this.loginToolStripMenuItem.Text = "Administrador";
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(61, 25);
+            this.loginToolStripMenuItem.Text = "Login";
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
             // cadastrarNovoUsuárioToolStripMenuItem
             // 
             this.cadastrarNovoUsuárioToolStripMenuItem.Name = "cadastrarNovoUsuárioToolStripMenuItem";
-            this.cadastrarNovoUsuárioToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
+            this.cadastrarNovoUsuárioToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
             this.cadastrarNovoUsuárioToolStripMenuItem.Text = "Gerenciar Usuários";
             this.cadastrarNovoUsuárioToolStripMenuItem.Click += new System.EventHandler(this.cadastrarNovoUsuárioToolStripMenuItem_Click);
             // 
             // entrarToolStripMenuItem
             // 
             this.entrarToolStripMenuItem.Name = "entrarToolStripMenuItem";
-            this.entrarToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
-            this.entrarToolStripMenuItem.Text = "Cadastrar Usuário";
+            this.entrarToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
+            this.entrarToolStripMenuItem.Text = "Cadastrar Novo Usuário";
             this.entrarToolStripMenuItem.Click += new System.EventHandler(this.entrarToolStripMenuItem_Click);
             // 
             // aRQUIVOToolStripMenuItem
