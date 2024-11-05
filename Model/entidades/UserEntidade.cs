@@ -1,5 +1,7 @@
 ﻿using System;
 using Model.Entitidades;
+using System;
+using Model.Entitidades;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -8,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using System.Windows.Forms;
 
 
 namespace Model.entidades
